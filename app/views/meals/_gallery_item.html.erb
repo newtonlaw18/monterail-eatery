@@ -1,0 +1,36 @@
+<div class="gallery">
+  <% @meals.each do |meal| %>
+    <div class="gallery-item" data-width="1" data-height="1">
+      <img src="../assets/img/gallery/<%= rand(1 .. 9) %>.jpeg" alt="" class="image-responsive-height">
+      <div class="overlayer bottom-left full-width">
+        <div class="overlayer-wrapper item-info ">
+          <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+            <div class="">
+              <p style="display: none;" id="user_id"><%= current_user.id %></p>
+              <p style="display: none;" id="restaurant_id"><%= meal.restaurant_id %></p>
+              <p style="display: none;" id="meal_id"><%= meal.id %></p>
+              <p id="meal_name" class="pull-left bold text-white fs-14 p-t-10" ><%= meal.name %></p>
+              <h5 id="meal_price" class="pull-right semi-bold text-white font-montserrat bold"><%= number_with_precision(meal.price, :precision => 2) %></h5>
+              <div class="clearfix"></div>
+            </div>
+          <div class="m-t-10">
+            <div class="inline m-l-10">
+              <p id="restaurant_name" class="no-margin text-white fs-12"><%= Restaurant.find(meal.restaurant_id).name %></p>
+              <p class="rating">
+                <i class="fa fa-star rated"></i>
+                <i class="fa fa-star rated"></i>
+                <i class="fa fa-star rated"></i>
+                <i class="fa fa-star rated"></i>
+                <i class="fa fa-star"></i>
+              </p>
+            </div>
+            <div class="pull-right m-t-10">
+              <button class="btn btn-white btn-xs btn-mini bold fs-14" type="button">Order</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

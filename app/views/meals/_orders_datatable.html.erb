@@ -1,0 +1,31 @@
+<div class="panel panel-transparent">   
+            <div class="panel-body">
+              <div id="tableWithExportOptions_wrapper" class="dataTables_wrapper form-inline no-footer">
+                <div class="table-responsive">
+                  <table class="table table-striped dataTable no-footer" id="tableWithExportOptions" role="grid" aria-describedby="tableWithExportOptions_info">
+                    <thead>
+                      <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="tableWithExportOptions" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Date</th>
+                        <th class="sorting" tabindex="0" aria-controls="tableWithExportOptions" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 238px;">Meal</th>
+                        <th class="sorting" tabindex="0" aria-controls="tableWithExportOptions" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 220px;">Price(s)</th>
+                        <th class="sorting" tabindex="0" aria-controls="tableWithExportOptions" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 159px;">Restaurant</th>
+                        <th class="sorting" tabindex="0" aria-controls="tableWithExportOptions" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 110px;">Status</th>
+                      </tr>
+                    </thead>
+
+                    <% Order.delivered_orders.where(user_id: current_user.id).each do |order| %>
+                    <tbody style="text-align: left;">             
+                      <tr class="gradeA odd" role="row">
+                        <td class="sorting_1"><%= order.created_at %></td>
+                        <td><%= order.name %></td>
+                        <td><%= order.price %></td>
+                        <td class="center"><%= Restaurant.find(order.restaurant_id).name %></td>
+                        <td class="center"><%= order.status %></td>
+                      </tr>
+                    </tbody>
+                    <% end %>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>

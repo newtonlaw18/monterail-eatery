@@ -1,0 +1,49 @@
+<div class="panel panel-transparent">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs nav-tabs-linetriangle hidden-sm hidden-xs" data-init-reponsive-tabs="dropdownfx">
+    <li class="active" id="todays_btn">
+      <a data-toggle="tab" href="#todays" aria-expanded="true"><span>Today's order</span></a>
+    </li>
+    <li class="" id="archived_btn">
+      <a data-toggle="tab" href="#archived" aria-expanded="false"><span>Past orders</span></a>
+    </li>
+   </ul>
+                      
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="todays">
+      <div class="row">
+        <div class="col-md-12">
+          <% if current_user.orders.todays_order.blank? %>
+          <h3>You haven't made any order today yet. Start ordering now!</h3>
+          <%#= render 'gallery_item' %>
+          <% elsif current_user.orders.todays_order.first.status=="Delivered" %>
+          <div class="order-received">
+            <h3>Your order for today has been delivered. Thank you and hope you enjoyed your meal!</h3>
+          </div>
+          <% else %>
+          <div class="order-info">
+            <h3>Your order has been received. Click the button below to stimulate receiving order.
+                 
+            </h3>
+            <img src="../assets/img/gallery/<%= rand(1 .. 9) %>.jpeg" alt="" class="image-responsive">
+            <h3><%= current_user.orders.todays_order.first.name %></h3>
+            <h4>$<%= current_user.orders.todays_order.first.price %></h4>
+            <p id="order_id" style="display: none;"><%= current_user.orders.todays_order.first.id %></p>
+            <button id="receiveOrder" class="btn btn-complete btn-cons">Receive order</button>
+            <p>Press the button above to stimulate receiving order</p>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="archived">
+      <div class="row">
+        <div class="col-md-12">          
+          <%= render 'orders_datatable' %>
+        </div>
+      </div>
+    </div>                      
+  </div>
+</div>
