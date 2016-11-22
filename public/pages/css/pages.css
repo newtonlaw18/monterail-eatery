@@ -1141,11 +1141,11 @@ body.rtl [class*="col-"] {
   font-family: 'Montserrat';
   font-size: 11px !important;
   font-weight: 400;
-  color: #7b7d82;
+  color: white;
 }
 .breadcrumb a.active {
   font-weight: 600;
-  color: white;
+  color: white !important; 
 }
 .breadcrumb li {
   padding-left: 0px;
