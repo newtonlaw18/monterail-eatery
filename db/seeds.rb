@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@monterail.com', password: '123456', password_confirmation: '123456')
 restaurants = Restaurant.create([{ name: 'Michelin Star Restaurant', address: 'Street A, Poland' }, { name: 'Sushi Corner', address: 'Pawła Włodkowica 12, 50-072 Wrocław, Poland' } , { name: 'Moaburger', address: 'plac Solny 10, 50-074 Wrocław, Poland' } , { name: 'Mama Manousch - Food & Wine', address: '6, Świdnicka 4A, 50-067 Wrocław, Poland' }])
 meals = Meal.create([{ name: 'Healthy Salad', price: 10.50, restaurant_id: 2 }, { name: 'Pizza', price: 12.50, restaurant_id: 3 }, 

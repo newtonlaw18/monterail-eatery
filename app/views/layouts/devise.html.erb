@@ -45,31 +45,9 @@
       </div>
       <!-- END Login Background Pic Wrapper-->
       <!-- START Login Right Container-->
-      <%#= yield %>
       <div class="login-container bg-white">
         <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
           <h2>Monterail Eatery</h2>
-          <p class="p-t-35">Sign in to start ordering now :)</p>
-          <!-- START Login Form -->
-          <!-- <form id="form-login" class="p-t-15" role="form" action="index.html"> -->
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <!-- START Form Control-->
-            <div class="form-group form-group-default">
-              <label>Login</label>
-              <div class="controls">
-                <!-- <input type="text" name="username" placeholder="User Name" class="form-control" required> -->
-                <%= f.email_field :email, class: 'form-control', placeholder: "email" %>
-              </div>
-            </div>
-            <!-- END Form Control-->
-            <!-- START Form Control-->
-            <div class="form-group form-group-default">
-              <label>Password</label>
-              <div class="controls">
-                <!-- <input type="password" class="form-control" name="password" placeholder="Credentials" required> -->
-                <%= f.password_field :password,class: 'form-control', placeholder: "password"  %>
-              </div>
-            </div>
             <a href="/users/auth/facebook"><button class="btn btn-block btn-primary" type="button">
                       <span class="pull-left"><i class="fa fa-facebook"></i>
                                     </span>
@@ -81,18 +59,6 @@
                                     </span>
                       <span class="bold">Login with Github</span>
             </button></a>
-            <!-- START Form Control-->
-            <div class="row">
-              <div class="col-md-6 no-padding">
-                <div class="checkbox ">
-                  <input type="checkbox" value="1" id="checkbox1">
-                  <label for="checkbox1">Keep Me Signed in</label>
-                </div>
-              </div>
-            </div>
-            <!-- END Form Control-->
-            <button class="btn btn-primary btn-cons m-t-10" type="submit">Sign in</button>
-          <% end %>
           <!-- </form> -->
           <!--END Login Form-->
           <div class="pull-bottom sm-pull-bottom">
