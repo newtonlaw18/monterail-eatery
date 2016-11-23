@@ -61,7 +61,7 @@ Password: 123456
 
 ## Authors
 
-* **Newton Law** - *Initial work* - [PurpleBooth](https://github.com/newtonlaw18)
+* **Newton Law** - *Initial work*
 
 ## Acknowledgments
 
