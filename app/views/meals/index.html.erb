@@ -2,7 +2,6 @@
 <%= render 'orders_tabs' %>
 
 <% if current_user.orders.todays_order.blank? %>
-  <%= render 'gallery_item' %>
   <%= render 'menu_modal' %>
   <%= render 'order_confirmation_modal' %>
 <% end %>
